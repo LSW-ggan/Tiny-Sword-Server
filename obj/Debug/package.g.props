@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <PackageJsonName Condition="$(PackageJsonName) == ''">backend</PackageJsonName>
+    <PackageJsonVersion Condition="$(PackageJsonVersion) == ''">0.0.0</PackageJsonVersion>
+    <PackageJsonPrivate Condition="$(PackageJsonPrivate) == ''">false</PackageJsonPrivate>
+    <PackageJsonScriptsTest Condition="$(PackageJsonScriptsTest) == ''">echo "Error: no test specified" &amp;&amp; exit 1</PackageJsonScriptsTest>
+    <PackageJsonScriptsStart Condition="$(PackageJsonScriptsStart) == ''">nodemon ./app.js</PackageJsonScriptsStart>
+    <PackageJsonDependenciesBcrypt Condition="$(PackageJsonDependenciesBcrypt) == ''">^6.0.0</PackageJsonDependenciesBcrypt>
+    <PackageJsonDependenciesCookieParser Condition="$(PackageJsonDependenciesCookieParser) == ''">~1.4.4</PackageJsonDependenciesCookieParser>
+    <PackageJsonDependenciesDebug Condition="$(PackageJsonDependenciesDebug) == ''">~2.6.9</PackageJsonDependenciesDebug>
+    <PackageJsonDependenciesDotenv Condition="$(PackageJsonDependenciesDotenv) == ''">^17.2.3</PackageJsonDependenciesDotenv>
+    <PackageJsonDependenciesExpress Condition="$(PackageJsonDependenciesExpress) == ''">^4.22.1</PackageJsonDependenciesExpress>
+    <PackageJsonDependenciesHttpErrors Condition="$(PackageJsonDependenciesHttpErrors) == ''">~1.6.3</PackageJsonDependenciesHttpErrors>
+    <PackageJsonDependenciesJoi Condition="$(PackageJsonDependenciesJoi) == ''">^18.0.2</PackageJsonDependenciesJoi>
+    <PackageJsonDependenciesJsonwebtoken Condition="$(PackageJsonDependenciesJsonwebtoken) == ''">^9.0.3</PackageJsonDependenciesJsonwebtoken>
+    <PackageJsonDependenciesMorgan Condition="$(PackageJsonDependenciesMorgan) == ''">^1.10.1</PackageJsonDependenciesMorgan>
+    <PackageJsonDependenciesMysql2 Condition="$(PackageJsonDependenciesMysql2) == ''">^3.16.0</PackageJsonDependenciesMysql2>
+    <PackageJsonDependenciesPug Condition="$(PackageJsonDependenciesPug) == ''">^3.0.3</PackageJsonDependenciesPug>
+    <PackageJsonDependenciesRequest Condition="$(PackageJsonDependenciesRequest) == ''">^2.88.2</PackageJsonDependenciesRequest>
+    <PackageJsonDependenciesSequelize Condition="$(PackageJsonDependenciesSequelize) == ''">^6.37.7</PackageJsonDependenciesSequelize>
+    <PackageJsonDependenciesSequelizeCli Condition="$(PackageJsonDependenciesSequelizeCli) == ''">^6.6.3</PackageJsonDependenciesSequelizeCli>
+    <PackageJsonDevdependenciesEslint Condition="$(PackageJsonDevdependenciesEslint) == ''">^9.39.2</PackageJsonDevdependenciesEslint>
+    <PackageJsonDevdependenciesSwaggerJsdoc Condition="$(PackageJsonDevdependenciesSwaggerJsdoc) == ''">^6.2.8</PackageJsonDevdependenciesSwaggerJsdoc>
+    <PackageJsonDevdependenciesSwaggerUiExpress Condition="$(PackageJsonDevdependenciesSwaggerUiExpress) == ''">^5.0.1</PackageJsonDevdependenciesSwaggerUiExpress>
+  </PropertyGroup>
+</Project>

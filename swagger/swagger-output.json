@@ -1,0 +1,192 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Tiny Sword DB Server API 명세서",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "host": "127.0.0.1:8000",
+  "basePath": "/",
+  "schemes": [ "http" ],
+  "paths": {
+    "/api/auth/join": {
+      "post": {
+        "description": "아이디, 닉네임 중복확인 후 회원가입을 진행합니다.",
+        "summary": "로컬 유저 회원가입",
+        "tags": [ "Auth" ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "example": "testUser@email.com",
+                    "type": "VARCHAR(40)"
+                  },
+                  "password": {
+                    "example": "super_strong_password",
+                    "type": "VARCHAR(100)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "성공",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "successExample": {
+                    "value": {
+                      "userId": "유저 식별자",
+                      "email": "유저 이메일"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "형식에 맞지 않는 데이터"
+          },
+          "409": {
+            "description": "아이디/닉네임 중복"
+          },
+          "500": {
+            "description": "서버 에러"
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "description": "",
+        "summary": "로컬 유저 로그인",
+        "tags": [ "Auth" ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "example": "testUser@email.com",
+                    "type": "VARCHAR(40)"
+                  },
+                  "password": {
+                    "example": "super_strong_password",
+                    "type": "VARCHAR(100)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "성공",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "successExample": {
+                    "value": {
+                      "userId": "유저 식별자",
+                      "email": "유저 이메일"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "형식에 맞지 않는 데이터"
+          },
+          "401": {
+            "description": "올바르지 않은 아이디/패스워드"
+          },
+          "500": {
+            "description": "서버 에러"
+          }
+        }
+      }
+    },
+    "/api/auth/token/refresh": {
+      "get": {
+        "description": "",
+        "summary": "토큰 갱신",
+        "tags": [ "Auth" ],
+        "responses": {
+          "200": {
+            "description": "성공",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "successExample": {
+                    "value": {
+                      "userId": "유저 식별자",
+                      "email": "유저 이메일"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "권한 없음"
+          },
+          "500": {
+            "description": "서버 에러"
+          }
+        }
+      }
+    },
+    "/api/auth/token/verify": {
+      "get": {
+        "description": "",
+        "summary": "토큰 검증",
+        "tags": [ "Auth" ],
+        "responses": {
+          "200": {
+            "description": "성공"
+          },
+          "401": {
+            "description": "권한 없음"
+          },
+          "500": {
+            "description": "서버 에러"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Users": {
+        "type": "object",
+        "required": [ "email", "nickname", "password" ],
+        "properties": {
+          "userId": {
+            "type": "BIGINT",
+            "description": "유저 식별자"
+          },
+          "email": {
+            "type": "VARCHAR(40)",
+            "description": "이메일"
+          },
+          "password": {
+            "type": "VARCHAR(100)",
+            "description": "비밀번호"
+          }
+        },
+        "xml": {
+          "name": "users"
+        }
+      }      
+    }
+  }
+}
