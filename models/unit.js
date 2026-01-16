@@ -113,18 +113,19 @@ class Unit extends Sequelize.Model {
         db.Unit.belongsTo(db.User, {
             foreignKey: 'userId',
             targetKey: 'userId',
+            onDelete: 'CASCADE',
         });
         db.Unit.hasMany(db.InventoryItem, {
             foreignKey: 'unitId',
-            onDelete: 'cascade',
+            onDelete: 'CASCADE',
         });
         db.Unit.hasMany(db.Skill, {
             foreignKey: 'unitId',
-            onDelete: 'cascade',
+            onDelete: 'CASCADE',
         });
         db.Unit.hasMany(db.SkillSlot, {
             foreignKey: 'unitId',
-            onDelete: 'cascade',
+            onDelete: 'CASCADE',
         });
     }
 }

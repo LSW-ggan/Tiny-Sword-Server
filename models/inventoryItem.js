@@ -56,6 +56,7 @@ class InventoryItem extends Sequelize.Model {
         db.InventoryItem.belongsTo(db.Unit, {
             foreignKey: 'unitId',
             targetKey: 'unitId',
+            onDelete: 'CASCADE',
         });
     }
 }

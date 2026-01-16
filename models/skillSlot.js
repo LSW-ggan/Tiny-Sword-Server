@@ -37,6 +37,7 @@ class SkillSlot extends Sequelize.Model {
         db.SkillSlot.belongsTo(db.Unit, {
             foreignKey: 'unitId',
             targetKey: 'unitId',
+            onDelete: 'CASCADE',
         });
     }
 }

@@ -38,6 +38,7 @@ class Skill extends Sequelize.Model {
         db.Skill.belongsTo(db.Unit, {
             foreignKey: 'unitId',
             targetKey: 'unitId',
+            onDelete: 'CASCADE',
         });
     }
 }
